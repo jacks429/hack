@@ -1,12 +1,12 @@
-// src/MobileComponent.jsx
+// src/components/MobileComponent.jsx
 import React, { useState } from 'react';
-import Header from './Header';
-import HomePage from './HomePage';
-import DocumentsPage from './DocumentsPage';
-import Modal from './Modal';
-import BottomNavigation from './BottomNavigation';
+import Header from '../components/mobile/Header';
+import HomePage from '../components/mobile/HomePage';
+import DocumentsPage from '../components/mobile/DocumentsPage';
+import Modal from '../components/mobile/Modal';
+import BottomNavigation from '../components/mobile/BottomNavigation';
 
-const MobileComponent = () => {
+const MobileComponent = ({ imageData }) => {
   // State to control the current page
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -35,7 +35,7 @@ const MobileComponent = () => {
 
       {/* Page Content */}
       {currentPage === 'home' && <HomePage />}
-      {currentPage === 'documents' && <DocumentsPage />}
+      {currentPage === 'documents' && <DocumentsPage imageData={imageData} />} {/* Pass imageData here */}
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />

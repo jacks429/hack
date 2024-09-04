@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import MobileComponent from './MobileComponent';
 import DesktopComponent from '../components/DesktopComponent';
 
+// GraphQL query to fetch the image data
 export const query = graphql`
   query {
     file(relativePath: { eq: "document-slov-passport.png" }) {
@@ -19,6 +20,7 @@ const MyResponsiveComponent = ({ data }) => {
 
   return (
     <>
+      {/* Pass the imageData as a prop to MobileComponent */}
       <MobileComponent imageData={imageData} />
       <DesktopComponent />
     </>
