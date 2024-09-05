@@ -8,6 +8,12 @@ import Modal from './Modal'; // Import the Modal component
 const DocumentsPage = ({ imageData }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+  const [preferences, setPreferences] = useState({
+    sports: false,
+    culture: false,
+    hackathon: false,
+    bikes: false,
+  }); // State to control checkbox preferences
 
   // Handlers for swipe actions
   const handlers = useSwipeable({
@@ -26,6 +32,14 @@ const DocumentsPage = ({ imageData }) => {
 
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
+  }, []);
+
+  const handlePreferenceChange = useCallback((event) => {
+    const { name, checked } = event.target;
+    setPreferences((prevPreferences) => ({
+      ...prevPreferences,
+      [name]: checked,
+    }));
   }, []);
 
   return (
@@ -49,8 +63,51 @@ const DocumentsPage = ({ imageData }) => {
               * Document updated at 17:39 | 04.09.2024
             </div>
             <div className="flex justify-between items-center">
-              <p>Nováková Sofiia</p>
+              <p>Michaela Vavrová</p>
               <img src={redBallDots} alt="More options" className="w-6 h-6 cursor-pointer" onClick={handleOpenModal} />
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-medium mb-2">Personalize your app:</h3>
+              <label className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  name="sports"
+                  checked={preferences.sports}
+                  onChange={handlePreferenceChange}
+                  className="mr-2"
+                />
+                Sports
+              </label>
+              <label className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  name="culture"
+                  checked={preferences.culture}
+                  onChange={handlePreferenceChange}
+                  className="mr-2"
+                />
+                Culture
+              </label>
+              <label className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  name="hackathon"
+                  checked={preferences.hackathon}
+                  onChange={handlePreferenceChange}
+                  className="mr-2"
+                />
+                Hackathon
+              </label>
+              <label className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  name="bikes"
+                  checked={preferences.bikes}
+                  onChange={handlePreferenceChange}
+                  className="mr-2"
+                />
+                Bikes
+              </label>
             </div>
           </div>
         </div>

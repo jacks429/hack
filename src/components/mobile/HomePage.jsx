@@ -70,7 +70,7 @@ const HomePage = ({ runImageData }) => {
         <div className="flex justify-between items-center">
           <div className="flex items-baseline">
             <span className="text-4xl font-bold">356</span>
-            <span className="text-red-500 text-lg ml-1">pc</span>
+            <span className="text-red-500 text-lg ml-1">points</span>
           </div>
           <button className="text-blue-500 text-sm">See all stores</button>
         </div>
