@@ -1,6 +1,11 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { useSwipeable } from 'react-swipeable';
+import utilitiesImage from '../../images/image_utilities.png'; // Adjust the path based on your structure
+import healthImage from '../../images/health.png'; // Import the health.png image
+import educationImage from '../../images/education.png'; // Import the education.png image
+import pizzaImage from '../../images/pizza.jpg'; // Import the pizza image
+import nayImage from '../../images/nay.png'; // Import the NAY image
 
 const HomePage = ({ runImageData }) => {
   const handlers = useSwipeable({
@@ -34,28 +39,27 @@ const HomePage = ({ runImageData }) => {
       {/* Latest Services Section */}
       <section className="p-4">
         <h2 className="text-lg font-semibold mb-2">Latest services</h2>
-        {/* Apply swipe handlers to this container */}
         <div {...handlers} className="flex space-x-4 overflow-x-auto hide-scrollbar touch-pan-x">
           {/* Service 1 */}
-          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-sm min-w-[150px]">
+          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md min-w-[150px]">
             <div className="mb-2">
-              <i className="icon-utilities text-red-500 text-3xl"></i>
+              <img src={utilitiesImage} alt="Utilities" className="w-12 h-12" />
             </div>
-            <span>Utilities</span>
+            <span className="text-center">Utilities</span>
           </div>
           {/* Service 2 */}
-          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-sm min-w-[150px]">
+          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md min-w-[150px]">
             <div className="mb-2">
-              <i className="icon-health text-red-500 text-3xl"></i>
+              <img src={healthImage} alt="Health and social" className="w-12 h-12" />
             </div>
-            <span>Health and social</span>
+            <span className="text-center">Health and social</span>
           </div>
           {/* Service 3 */}
-          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-sm min-w-[150px]">
+          <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md min-w-[150px]">
             <div className="mb-2">
-              <i className="icon-education text-red-500 text-3xl"></i>
+              <img src={educationImage} alt="Education" className="w-12 h-12" />
             </div>
-            <span>Education</span>
+            <span className="text-center">Education</span>
           </div>
         </div>
       </section>
@@ -64,25 +68,27 @@ const HomePage = ({ runImageData }) => {
       <section className="p-4">
         <h2 className="text-lg font-semibold mb-2">Your points by activity to improve city</h2>
         <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-          <div className="flex justify-between items-center">
-            <div className="text-4xl font-bold">356</div>
-            <button className="text-blue-500 text-sm">See all stores</button>
+          {/* Pomadorro Pizza Entry */}
+          <div className="flex justify-between items-center mb-4">
+            <div className="flex items-center">
+              <img src={pizzaImage} alt="Pizza" className="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <span className="block font-semibold">Pomadorro Pizza</span>
+                <span className="block text-xs text-gray-500">35 discounts for you</span>
+              </div>
+            </div>
+            <span className="text-xs text-green-500">Tue 6:00 - 22:00</span>
           </div>
-          <div className="flex items-center justify-between mt-4">
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-100 p-2 rounded-full">
-                <i className="icon-pizza text-red-500 text-2xl"></i>
+          {/* NAY Entry */}
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <img src={nayImage} alt="NAY" className="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <span className="block font-semibold">NAY</span>
+                <span className="block text-xs text-gray-500">8 discounts for you</span>
               </div>
-              <span className="text-sm mt-1">Pomadorro Pizza</span>
-              <span className="text-xs text-gray-500">9 discounts for you</span>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-100 p-2 rounded-full">
-                <i className="icon-shop text-blue-500 text-2xl"></i>
-              </div>
-              <span className="text-sm mt-1">NAY</span>
-              <span className="text-xs text-gray-500">8 discounts for you</span>
-            </div>
+            <span className="text-xs text-green-500">Tue 8:00 - 21:00</span>
           </div>
         </div>
       </section>
