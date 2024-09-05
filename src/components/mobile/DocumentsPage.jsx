@@ -45,7 +45,7 @@ const DocumentsPage = () => {
       {currentIndex === 0 && (
         <div>
           <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h2 className="text-xl font-semibold mb-2">Slovak passport</h2>
+            <h2 className="text-xl font-semibold mb-2">My Proflike</h2>
             <div className="flex items-center mb-4">
               <img src={artyImage} alt="Passport" className="w-20 h-20 rounded-lg mr-4" />
               <div>
