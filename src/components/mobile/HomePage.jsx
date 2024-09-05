@@ -60,33 +60,80 @@ const HomePage = ({ runImageData }) => {
         </div>
       </section>
 
-      {/* Points Section */}
       <section className="p-4">
-        <h2 className="text-lg font-semibold mb-2">Your points by activity to improve city</h2>
-        <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
-          <div className="flex justify-between items-center">
-            <div className="text-4xl font-bold">356</div>
-            <button className="text-blue-500 text-sm">See all stores</button>
-          </div>
-          <div className="flex items-center justify-between mt-4">
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-100 p-2 rounded-full">
-                <i className="icon-pizza text-red-500 text-2xl"></i>
-              </div>
-              <span className="text-sm mt-1">Pomadorro Pizza</span>
-              <span className="text-xs text-gray-500">9 discounts for you</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-100 p-2 rounded-full">
-                <i className="icon-shop text-blue-500 text-2xl"></i>
-              </div>
-              <span className="text-sm mt-1">NAY</span>
-              <span className="text-xs text-gray-500">8 discounts for you</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <h2 className="text-lg font-semibold mb-2">Your points by activity to improve city</h2>
+    <div className="flex justify-between items-center">
+      <div className="flex items-baseline">
+        <span className="text-4xl font-bold">356</span>
+        <span className="text-red-500 text-lg ml-1">pc</span>
+      </div>
+      <button className="text-blue-500 text-sm">See all stores</button>
     </div>
+    <p className="text-sm text-gray-500 mt-2">Pocet platnosti: 48 dni</p>
+      </section>
+
+
+      {/* Points Section */}
+<section className="p-4">
+  {/* Store 1 */}
+  <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+    <div className="flex justify-between items-center">
+      <div className="flex items-center">
+        <img src="path_to_pizza_image.png" alt="Pizza" className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <h3 className="font-semibold">Pomadorro Pizza</h3>
+          <p className="text-xs text-gray-500">35 discounts for you</p>
+        </div>
+      </div>
+      <div className="text-sm text-green-600">Tue 6:00 - 22:00</div>
+    </div>
+  </div>
+
+  {/* Store 2 */}
+  <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+    <div className="flex justify-between items-center">
+      <div className="flex items-center">
+        <img src="path_to_store_image.png" alt="Store" className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <h3 className="font-semibold">Bistro Burger</h3>
+          <p className="text-xs text-gray-500">20 discounts for you</p>
+        </div>
+      </div>
+      <div className="text-sm text-green-600">Wed 10:00 - 23:00</div>
+    </div>
+  </div>
+
+  {/* Store 3 */}
+  <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+    <div className="flex justify-between items-center">
+      <div className="flex items-center">
+        <img src="path_to_store_image.png" alt="Store" className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <h3 className="font-semibold">Coffee Corner</h3>
+          <p className="text-xs text-gray-500">15 discounts for you</p>
+        </div>
+      </div>
+      <div className="text-sm text-green-600">Thu 7:00 - 18:00</div>
+    </div>
+  </div>
+
+  {/* Store 4 */}
+  <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+    <div className="flex justify-between items-center">
+      <div className="flex items-center">
+        <img src="path_to_store_image.png" alt="Store" className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <h3 className="font-semibold">Market Fresh</h3>
+          <p className="text-xs text-gray-500">10 discounts for you</p>
+        </div>
+      </div>
+      <div className="text-sm text-green-600">Fri 8:00 - 20:00</div>
+    </div>
+  </div>
+</section>
+
+
+  </div>
   );
 };
 
