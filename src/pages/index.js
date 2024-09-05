@@ -2,7 +2,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MobileComponent from './MobileComponent';
-import DesktopComponent from '../components/DesktopComponent';
+import DesktopComponent from './DesktopComponent';
 
 // GraphQL query to fetch all images needed
 export const query = graphql`
