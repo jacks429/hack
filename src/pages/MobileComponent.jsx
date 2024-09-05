@@ -16,19 +16,16 @@ const MobileComponent = ({ imageData }) => {
   };
 
   const handlePageChange = (page) => {
-    console.log(`Changing page to: ${page}`); // Log page changes
     setCurrentPage(page);
   };
 
-  console.log(`Current page is: ${currentPage}`); // Log current page state
-
   return (
-    <div className="block md:hidden min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       <Header currentPage={currentPage} />
-      {currentPage === 'home' && <HomePage runImageData={imageData.run} />}
-      {currentPage === 'documents' && <DocumentsPage imageData={imageData.passport} />}
+      {currentPage === 'home' && imageData?.run && <HomePage runImageData={imageData.run} />}
+      {currentPage === 'documents' && imageData?.passport && <DocumentsPage imageData={imageData.passport} />}
       {currentPage === 'services' && <ServicesPage />}
-      {currentPage === 'voting' && <VotingPage imageData={imageData.voting} />} 
+      {currentPage === 'voting' && <VotingPage imageData={imageData.voting} />}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
       <BottomNavigation onPageChange={handlePageChange} />
     </div>

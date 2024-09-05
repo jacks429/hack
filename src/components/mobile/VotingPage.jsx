@@ -1,7 +1,8 @@
 // src/components/mobile/VotingPage.jsx
 import React from 'react';
 
-const VotingPage = () => {
+const VotingPage = ( ) => {
+
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-4">

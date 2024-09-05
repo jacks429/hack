@@ -17,6 +17,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "gatsby": "^5.13.7",
+    "gatsby-plugin-cloudflare-pages": "^1.0.3",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
