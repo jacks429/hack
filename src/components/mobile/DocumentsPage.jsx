@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { QRCodeSVG } from 'qrcode.react'; // Corrected import
+import { QRCodeSVG } from 'qrcode.react';
+import redBallDots from '../../images/redball-3dot.png';
+import Modal from './Modal'; // Import the Modal component
 
 const DocumentsPage = ({ imageData }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
   // Handlers for swipe actions
   const handlers = useSwipeable({
@@ -15,6 +18,15 @@ const DocumentsPage = ({ imageData }) => {
   });
 
   const image = getImage(imageData);
+
+  // Use useCallback to memoize handlers to avoid re-creation on every render
+  const handleOpenModal = useCallback(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
 
   return (
     <div {...handlers} className="p-4">
@@ -38,9 +50,7 @@ const DocumentsPage = ({ imageData }) => {
             </div>
             <div className="flex justify-between items-center">
               <p>Nováková Sofiia</p>
-              <button className="text-gray-500">
-                <i className="icon-more"></i>
-              </button>
+              <img src={redBallDots} alt="More options" className="w-6 h-6 cursor-pointer" onClick={handleOpenModal} />
             </div>
           </div>
         </div>
@@ -50,15 +60,16 @@ const DocumentsPage = ({ imageData }) => {
         <div>
           <h1 className="text-2xl font-semibold mb-4">Additional Information</h1>
           <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center">
-            {/* Text above QR Code */}
             <p className="mb-4 text-gray-700 text-center">
               The code will still be in effect 2:43 min
             </p>
-            {/* QR Code centered using QRCodeSVG */}
             <QRCodeSVG value="https://example.com" size={128} />
           </div>
         </div>
       )}
+
+      {/* Modal component */}
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={handleCloseModal} />} {/* Conditional rendering */}
     </div>
   );
 };

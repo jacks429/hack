@@ -1,6 +1,7 @@
 import React from 'react';
 import homeIcon from '../../images/home-icon.png';
 import voteIcon from '../../images/vote-icon.png';
+import documentsIcon from '../../images/documents-icon.png';
 import settingsIcon from '../../images/settings-icon.png';
 import servicesIcon from '../../images/services-icon.png';
 
@@ -10,7 +11,10 @@ const BottomNavigation = ({ onPageChange }) => (
       <img src={homeIcon} alt="Home" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
     <button onClick={() => onPageChange('documents')} className="flex flex-col items-center text-gray-500">
-      <img src={voteIcon} alt="Documents" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
+      <img src={documentsIcon} alt="Documents" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
+    </button>
+    <button onClick={() => onPageChange('vote')} className="flex flex-col items-center text-gray-500">
+      <img src={voteIcon} alt="Vote" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
     <button onClick={() => onPageChange('news')} className="flex flex-col items-center text-gray-500">
       <img src={settingsIcon} alt="News" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
