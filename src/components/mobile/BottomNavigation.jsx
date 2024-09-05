@@ -1,23 +1,22 @@
-// src/BottomNavigation.jsx
 import React from 'react';
+import homeIcon from '../../images/home-icon.png';
+import voteIcon from '../../images/vote-icon.png';
+import settingsIcon from '../../images/settings-icon.png';
+import servicesIcon from '../../images/services-icon.png';
 
 const BottomNavigation = ({ onPageChange }) => (
   <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-t p-4 flex justify-around">
     <button onClick={() => onPageChange('home')} className="flex flex-col items-center text-red-500">
-      <i className="icon-home"></i>
-      <span className="text-xs">Home</span>
+      <img src={homeIcon} alt="Home" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
     <button onClick={() => onPageChange('documents')} className="flex flex-col items-center text-gray-500">
-      <i className="icon-documents"></i>
-      <span className="text-xs">Documents</span>
+      <img src={voteIcon} alt="Documents" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
     <button onClick={() => onPageChange('news')} className="flex flex-col items-center text-gray-500">
-      <i className="icon-news"></i>
-      <span className="text-xs">News</span>
+      <img src={settingsIcon} alt="News" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
     <button onClick={() => onPageChange('services')} className="flex flex-col items-center text-gray-500">
-      <i className="icon-services"></i>
-      <span className="text-xs">Services</span>
+      <img src={servicesIcon} alt="Services" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
     </button>
   </nav>
 );
