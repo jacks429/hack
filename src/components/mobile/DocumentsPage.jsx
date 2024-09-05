@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { QRCodeSVG } from 'qrcode.react';
+import artyImage from '../../images/arty.jpg'; // Import the static image
 import redBallDots from '../../images/redball-3dot.png';
 import Modal from './Modal'; // Import the Modal component
 
-const DocumentsPage = ({ imageData }) => {
+const DocumentsPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const [preferences, setPreferences] = useState({
@@ -22,8 +22,6 @@ const DocumentsPage = ({ imageData }) => {
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
-
-  const image = getImage(imageData);
 
   // Use useCallback to memoize handlers to avoid re-creation on every render
   const handleOpenModal = useCallback(() => {
@@ -49,11 +47,7 @@ const DocumentsPage = ({ imageData }) => {
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <h2 className="text-xl font-semibold mb-2">Slovak passport</h2>
             <div className="flex items-center mb-4">
-              {image ? (
-                <GatsbyImage image={image} alt="Passport" className="w-20 h-20 rounded-lg mr-4" />
-              ) : (
-                <p>Image not available</p>
-              )}
+              <img src={artyImage} alt="Passport" className="w-20 h-20 rounded-lg mr-4" />
               <div>
                 <p>Date of birth: 30.09.1982</p>
                 <p>Rodne cislo: 002438248</p>
