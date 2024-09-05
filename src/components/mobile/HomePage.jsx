@@ -1,12 +1,13 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { useSwipeable } from 'react-swipeable';
 
-const HomePage = () => {
+const HomePage = ({ runImageData }) => {
   const handlers = useSwipeable({
     onSwipedLeft: () => console.log("Swiped left"),
     onSwipedRight: () => console.log("Swiped right"),
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true
+    trackMouse: true,
   });
 
   return (
@@ -15,13 +16,17 @@ const HomePage = () => {
       <section className="p-4">
         <h2 className="text-lg font-semibold mb-2">Latest news</h2>
         <div className="relative h-40 rounded-lg overflow-hidden">
-          <img
-            src="marathon.jpg"
-            alt="Marathon"
-            className="w-full h-full object-cover"
-          />
+          {runImageData ? (
+            <GatsbyImage
+              image={runImageData}
+              alt="Marathon"
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <p>Image not available</p>
+          )}
           <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
-            Marafon 28.09.24
+            Marathon 28.09.24
           </div>
         </div>
       </section>

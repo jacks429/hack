@@ -5,7 +5,7 @@ import HomePage from '../components/mobile/HomePage';
 import DocumentsPage from '../components/mobile/DocumentsPage';
 import Modal from '../components/mobile/Modal';
 import BottomNavigation from '../components/mobile/BottomNavigation';
-
+import ServicesPage from '../components/mobile/ServicesPage'; // Import ServicesPage
 const MobileComponent = ({ imageData }) => {
   // State to control the current page
   const [currentPage, setCurrentPage] = useState('home');
@@ -34,8 +34,9 @@ const MobileComponent = ({ imageData }) => {
       <Header currentPage={currentPage} />
 
       {/* Page Content */}
-      {currentPage === 'home' && <HomePage />}
-      {currentPage === 'documents' && <DocumentsPage imageData={imageData} />} {/* Pass imageData here */}
+      {currentPage === 'home' && <HomePage runImageData={imageData.run} />}
+      {currentPage === 'documents' && <DocumentsPage imageData={imageData.passport} />}
+      {currentPage === 'services' && <ServicesPage />}
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
