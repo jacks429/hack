@@ -11,7 +11,7 @@ export const query = graphql`
       gatsbyImageData(width: 80, height: 80, layout: FIXED)
     }
   }
-  runImage: file(relativePath: { eq: "homage-page-run.png" }) {
+  runImage: file(relativePath: { eq: "hackathon.jpg" }) {
     childImageSharp {
       gatsbyImageData(width: 400, quality: 90, layout: CONSTRAINED)
     }

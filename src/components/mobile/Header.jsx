@@ -4,7 +4,7 @@ import React from 'react';
 const Header = ({ currentPage }) => (
   <header className="flex items-center justify-between p-4 bg-white shadow-sm">
     <h1 className="text-xl font-semibold">
-      {currentPage === 'home' && 'Hello, Sofia! 👋'}
+      {currentPage === 'home' && 'Hello, Michaela! 👋'}
       {currentPage === 'documents' && 'Documents'}
     </h1>
     <div className="flex space-x-4">

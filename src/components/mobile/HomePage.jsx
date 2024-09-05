@@ -31,7 +31,7 @@ const HomePage = ({ runImageData }) => {
             <p>Image not available</p>
           )}
           <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
-            Marathon 28.09.24
+              Hackathon 5. September 2024
           </div>
         </div>
       </section>
